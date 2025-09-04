@@ -93,7 +93,7 @@ El flujo es:
 
  Ejemplo: Un robot aspiradora que tiene como **creencia** el mapa de la casa, como **deseo** limpiar todas las habitaciones, y como **intención** limpiar primero la sala porque es la más transitada.
 
- #TERCER PUNTO 
+# 3. TERCER PUNTO- SOLUCION A PROBLEMA 
  Entender el algortimo sobre campos de potencia artificial y desarrollar una solucion al problema del agente que se queda dentro de la herradura por medio de algortimo BDI 
 
 
