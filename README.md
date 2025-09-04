@@ -96,6 +96,61 @@ El flujo es:
 # 3. TERCER PUNTO- SOLUCION A PROBLEMA 
  Entender el algortimo sobre campos de potencia artificial y desarrollar una solucion al problema del agente que se queda dentro de la herradura por medio de algortimo BDI 
 
+# Simulación de Navegación con Campos Potenciales y BDI
+
+Este proyecto muestra cómo un **agente móvil** se desplaza en un entorno con obstáculos usando el método de **campos potenciales**, incorporando un mecanismo de **escape de mínimos locales** inspirado en el modelo **BDI (Belief–Desire–Intention)**.
+
+---
+
+## ¿Qué hace el código?
+- El **agente** (rojo) comienza en una posición inicial.  
+- Su meta es llegar al **objetivo** (verde).  
+- Hay varios **obstáculos** (negros) que forman una especie de herradura.  
+- El agente se mueve siguiendo el **gradiente del campo de potencial**:  
+  - El **potencial atractivo** lo empuja hacia el objetivo.  
+  - El **potencial repulsivo** lo aleja de los obstáculos.  
+- Si queda atrapado en un **mínimo local** (cuando apenas se mueve durante varias iteraciones), entra en **modo escape**:  
+  - Se mueve aleatoriamente hasta salir de la zona de estancamiento.  
+  - Luego vuelve a seguir el gradiente normalmente.  
+
+La simulación se muestra en **dos gráficos**:  
+1. El **entorno** con el agente, el objetivo, los obstáculos y la trayectoria.  
+2. La evolución de la **energía potencial** a lo largo del tiempo.
+
+---
+
+## Relación con el modelo BDI
+El algoritmo se puede entender con la lógica **BDI** de agentes inteligentes:
+
+- **Beliefs (Creencias):**  
+  El agente conoce su posición, la ubicación del objetivo y de los obstáculos. También evalúa si está atrapado o no.  
+
+- **Desires (Deseos):**  
+  Llegar al objetivo minimizando la energía potencial.  
+
+- **Intentions (Intenciones):**  
+  - En **modo normal**, seguir el gradiente del campo potencial.  
+  - En **modo escape**, moverse aleatoriamente para salir de trampas locales.  
+
+De esta forma, el agente **razona y actúa** según su percepción del entorno y su estado interno.  
+
+---
+
+##  Visualización
+- **Rojo:** posición del agente.  
+- **Verde:** objetivo.  
+- **Negro:** obstáculos.  
+- **Azul:** trayectoria recorrida.  
+- **Gráfico lateral:** energía potencial vs iteración.  
+
+El texto en pantalla indica si el agente está en *MODO NORMAL* o en *MODO ESCAPE*.  
+
+---
+
+##  Cómo ejecutar
+1. Asegúrate de tener instaladas las librerías:
+   ```bash
+   pip install numpy matplotlib
 
 
 
